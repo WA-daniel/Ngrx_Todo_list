@@ -1,0 +1,7 @@
+<mat-list>
+    <h2>Todo List</h2>
+    <mat-list-item *ngFor="let todo of  todos$ | async">
+        <p mat-line>{{todo.nameTodo}}</p>
+        <p mat-line>{{todo.stateTodo}}</p>
+    </mat-list-item>
+</mat-list>
