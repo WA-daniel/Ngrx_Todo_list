@@ -1,7 +1,9 @@
 <mat-list>
     <h2>Todo List</h2>
     <mat-list-item *ngFor="let todo of  todos$ | async">
-        <p mat-line>{{todo.nameTodo}}</p>
-        <p mat-line>{{todo.stateTodo}}</p>
+        <p matLine [ngClass]="{'checked': todo.stateTodo === false}">{{todo.nameTodo}}</p>
+        <p matLine *ngIf="todo.stateTodo === true">Activer</p>
+        <p matLine *ngIf="todo.stateTodo === false">Désactiver</p>
+        <mat-checkbox (change)="onSelectTodo(todo)"></mat-checkbox>
     </mat-list-item>
 </mat-list>

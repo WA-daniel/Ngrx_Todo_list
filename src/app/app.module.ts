@@ -31,6 +31,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
  */
 import {RouterModule} from '@angular/router';
 import {routes} from './route';
+/*
+ * NGRX
+ */
+import {StoreModule} from "@ngrx/store";
+import {todoReducer} from "./reducers/todo.reducer";
 
 @NgModule({
     declarations: [
@@ -47,6 +52,7 @@ import {routes} from './route';
         MatCheckboxModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        StoreModule.forRoot({ todo: todoReducer}),
         RouterModule.forRoot(routes, {useHash: true}),
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false})
     ],

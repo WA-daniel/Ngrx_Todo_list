@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
-import {Todo} from '../shared/model/todo';
+
 
 @Injectable()
 export class TodosService {
@@ -10,7 +10,7 @@ export class TodosService {
     constructor(private http: HttpClient) {
     }
 
-    loadAllTodos(): Observable<Todo[]> {
-        return this.http.get<Todo[]>(this.todosUrl);
+    loadAllTodos(): Observable<any> {
+        return this.http.get(this.todosUrl);
     }
 }
