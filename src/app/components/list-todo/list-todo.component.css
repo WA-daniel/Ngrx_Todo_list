@@ -1,6 +1,6 @@
 .checked {
-     text-decoration: line-through;
- }
+    text-decoration: line-through;
+}
 
 mat-card-header {
     justify-content: center;
@@ -9,6 +9,10 @@ mat-card-header {
 }
 
 mat-card-content {
-    padding: 20px 60px 60px 20px;
     text-align: left;
+}
+
+.btn-add-todo {
+    justify-content: right;
+    padding-right: 24px;
 }

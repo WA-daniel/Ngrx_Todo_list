@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Store} from "@ngrx/store";
-import {AppState} from "../app.state";
-import {Todo} from "../shared/model/todo";
+import {AppState} from "../../app.state";
+import {Todo} from "../../shared/model/todo";
 import {Observable} from "rxjs/Observable";
 
 @Component({

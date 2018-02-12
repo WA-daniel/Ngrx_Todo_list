@@ -1,0 +1,20 @@
+<form [formGroup]="form">
+    <mat-form-field>
+        <input matInput
+               ngModel
+               formControlName="nameTodo"
+               placeholder="Nom"
+               required>
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput
+                  ngModel
+                  formControlName="descriptionTodo"
+                  placeholder="Description"></textarea>
+    </mat-form-field>
+</form>
+<div class="btn-add-todo">
+    <button [disabled]="!form.valid" mat-raised-button (click)="addTodo(form.value)">Ajouter</button>
+</div>
+
+

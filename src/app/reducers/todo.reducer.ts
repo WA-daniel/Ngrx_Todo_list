@@ -17,6 +17,14 @@ export function todoReducer(state: Todo[] = [], action) {
                     }
                 }
             });
-        return state;
+            return state;
+
+        case 'ADD_TODO':
+            let arrayIndex = state.length;
+            action.addTodo.idTodo = arrayIndex + 1;
+            action.addTodo.stateTodo = true;
+            state = [action.addTodo, ...state];
+
+            return state;
     }
 }

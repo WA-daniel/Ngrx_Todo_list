@@ -1,0 +1,9 @@
+.btn-add-todo {
+    text-align: right;
+    padding-right: 16px;
+}
+
+mat-form-field {
+    width: 47%;
+    padding-left: 10px;
+}

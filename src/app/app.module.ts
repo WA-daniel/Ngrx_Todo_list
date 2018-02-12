@@ -1,13 +1,16 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 /*
  * COMPONENT
  */
 import {AppComponent} from './app.component';
 import {ListTodoComponent} from './components/list-todo/list-todo.component';
 import {HomeComponent} from './components/home/home.component';
-import {DetailsComponent} from './details/details.component';
+import {DetailsComponent} from './components/details/details.component';
+import {AddTodoComponent} from './components/add-todo/add-todo.component';
 /*
  * SERVICES
  */
@@ -44,7 +47,8 @@ import {todoReducer} from "./reducers/todo.reducer";
         AppComponent,
         ListTodoComponent,
         HomeComponent,
-        DetailsComponent
+        DetailsComponent,
+        AddTodoComponent
     ],
     imports: [
         InMemoryWebApiModule,
@@ -56,6 +60,8 @@ import {todoReducer} from "./reducers/todo.reducer";
         MatCardModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
         StoreModule.forRoot({todo: todoReducer}),
         RouterModule.forRoot(routes, {useHash: true}),
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false})

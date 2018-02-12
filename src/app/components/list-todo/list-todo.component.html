@@ -4,6 +4,7 @@
     </mat-card-header>
 
     <mat-card-content>
+        <app-add-todo></app-add-todo><br>
         <mat-list>
             <mat-list-item *ngFor="let todo of  todos$ | async">
                 <mat-divider></mat-divider>
@@ -14,7 +15,4 @@
             </mat-list-item>
         </mat-list>
     </mat-card-content>
-    <mat-card-actions>
-
-    </mat-card-actions>
 </mat-card>
