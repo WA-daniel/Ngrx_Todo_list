@@ -1,6 +1,5 @@
 import {Todo} from "../shared/model/todo";
 
-
 export function todoReducer(state: Todo[] = [], action) {
     switch (action.type) {
         case 'LOAD_TODOS':
@@ -18,6 +17,6 @@ export function todoReducer(state: Todo[] = [], action) {
                     }
                 }
             });
-            return state;
+        return state;
     }
 }

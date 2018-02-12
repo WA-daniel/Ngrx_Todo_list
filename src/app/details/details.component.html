@@ -1,0 +1,14 @@
+<mat-card class="details-box">
+    <mat-card-header>
+        <mat-card-title><h2>Todo details</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p><strong>Nom : </strong>{{todo.nameTodo}}</p>
+        <p><strong>Description : </strong>{{todo.descriptionTodo}}</p>
+        <p><strong>Etat : </strong>{{todo.stateTodo ? 'Activer': 'Désactiver'}}</p>
+    </mat-card-content>
+    <mat-card-footer class="button-box">
+        <button routerLink="/home" mat-raised-button>Close</button>
+    </mat-card-footer>
+</mat-card>
+

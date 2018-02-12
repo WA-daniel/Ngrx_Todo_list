@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {ListTodoComponent} from './components/list-todo/list-todo.component';
 import {HomeComponent} from './components/home/home.component';
+import {DetailsComponent} from './details/details.component';
 /*
  * SERVICES
  */
@@ -24,6 +25,7 @@ import {
     MatButtonModule,
     MatListModule,
     MatCheckboxModule,
+    MatCardModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 /*
@@ -41,7 +43,8 @@ import {todoReducer} from "./reducers/todo.reducer";
     declarations: [
         AppComponent,
         ListTodoComponent,
-        HomeComponent
+        HomeComponent,
+        DetailsComponent
     ],
     imports: [
         InMemoryWebApiModule,
@@ -50,9 +53,10 @@ import {todoReducer} from "./reducers/todo.reducer";
         MatButtonModule,
         MatListModule,
         MatCheckboxModule,
+        MatCardModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        StoreModule.forRoot({ todo: todoReducer}),
+        StoreModule.forRoot({todo: todoReducer}),
         RouterModule.forRoot(routes, {useHash: true}),
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false})
     ],

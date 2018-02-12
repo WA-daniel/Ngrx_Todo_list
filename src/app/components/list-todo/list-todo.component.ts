@@ -4,6 +4,7 @@ import {AppState} from "../../app.state";
 import {Observable} from 'rxjs/Observable';
 import {TodosService} from '../../services/todos.service';
 import {Store} from "@ngrx/store";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-list-todo',
@@ -11,25 +12,20 @@ import {Store} from "@ngrx/store";
     styleUrls: ['./list-todo.component.css']
 })
 export class ListTodoComponent implements OnInit {
-
     todos$: Observable<Todo[]>;
 
     constructor(private serv: TodosService,
+                public router: Router,
                 private store: Store<AppState>) {
         this.todos$ = this.store.select('todo');
     }
 
     ngOnInit() {
-        this.getTodos();
+        this.todos$.subscribe(test => console.log(test));
     }
 
-    getTodos() {
-        this.serv.loadAllTodos().subscribe(todos => {
-            this.store.dispatch({
-                type: 'LOAD_TODOS',
-                payload: todos
-            });
-        });
+    moreDetails(todo) {
+        this.router.navigate(['/details/' + todo.idTodo]);
     }
 
     onSelectTodo(todo) {
