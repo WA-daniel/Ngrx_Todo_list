@@ -21,7 +21,6 @@ export class ListTodoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.todos$.subscribe(test => console.log(test));
     }
 
     moreDetails(todo) {
